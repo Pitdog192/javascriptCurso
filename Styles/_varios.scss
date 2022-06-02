@@ -1,0 +1,76 @@
+//Variables
+$border: 1px solid black;
+$bgc:rgba(0, 0, 0,0.6);
+$white:white;
+$center:center;
+$border: 1px solid black;
+$bgcw:rgba(255, 255, 255, 0.678);
+
+//Extend
+%select {
+    background-color: rgba(255,195,214,1);
+    font-size: 1rem;
+    text-align: center;
+}
+
+%sel {@include xs{width: 100px;}
+@include sm{width: 120px;}
+@include md{width: 150px;}
+@include lg{width: 180px;}
+@include xl{width: 200px;}}
+
+%form {@include xs{width: 90%;}
+@include sm{width: 70%;}
+@include md{width: 60%;}
+@include lg{width: 55%;}
+@include xl{width: 50%;}}
+
+%titulos {
+    text-align: $center;
+    font-size: 2.5rem;
+    color: $white;
+    text-shadow: 3px 3px 0px black, 2px 2px 0px black, 1px 1px 0px black;
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+
+%fnt {@include xs{font-size: 1rem;}
+      @include sm{font-size: 2rem;}
+      @include md{font-size: 1.8rem;}
+      @include lg{font-size: 1.4rem;}
+      @include xl{font-size: 1.2rem;}}
+
+%img {
+    @include xs{width: 90%;} 
+    @include sm{width: 90%;} 
+    @include md{width: 85%;} 
+    @include lg{width: 45%;} 
+    @include xl{width: 45%;}}
+
+
+%rgba {
+    background-color: rgba(255,195,214,1);
+    text-align: $center;
+}
+
+%estados{
+    color: black;
+    background-color: rgba(255,195,214,1);
+ }
+
+
+//Map
+$divNosotros:(  1: flex,
+                2: column,
+                3: $center,
+                4: $center,
+                5: $center,
+                6: 15px);
+
+//mixin con variable
+@mixin colores ($background, $color, $align) {
+    background-color: $background;
+    color: $color;
+    text-align: $align;
+}              
+  

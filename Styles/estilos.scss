@@ -1,0 +1,208 @@
+@import 'headerFooter';
+@import 'mediaQuerys';
+@import 'varios';
+
+body {
+	font-family: 'Fredoka', sans-serif;
+	background-color: #fa6f9b;
+}
+
+.imgLogo {
+    width: 150px;
+}
+
+.btnSub{
+    color: black;
+    background-color: rgba(255,195,214,1);
+    text-transform: bold;
+    font-size: 1rem;
+    height: 40px;
+    border: $border;
+    border-radius: 5px;
+    margin-top: 15px;
+    &:hover{
+        color: $white;
+        transform: scale(1.1);
+        background: rgba(250,111,155,1);
+    }
+}
+
+main {
+    min-height: 90vh;
+    background-image: url(https://f.vividscreen.info/soft/5fd8414f8b1962b432d5de9b502c2c71/Colorful-Nails-1920x1200.jpg);
+	background-position: $center;
+    background-repeat: repeat;
+    background-size: cover;
+	padding: 15px;
+    .titPrin{
+        @extend %titulos;
+    }
+    .secInicio{
+        padding: 0px 30px;
+        p{
+            @include colores($bgc, $white , $center );
+            border-radius: 15px;
+            padding: 15px;
+            @extend %fnt;
+            a{
+                color: $white;
+            }
+        }
+        h2{
+            @extend %titulos;
+            @include sm {
+                color:pink;
+            }
+        }
+        h5{
+            text-align: $center;
+        }
+    }
+
+//INICIO DE NOSOTROS
+//................//
+    .secNosotros{
+        padding: 0px 5%;
+        h2 {
+            @include colores($bgc, $white , $center );
+            width: 40%;
+            border-radius: 15px;
+        }
+        .divIframe{
+            display: map-get($divNosotros, 1);
+            flex-direction: map-get($divNosotros, 2 );
+            justify-content: map-get($divNosotros, 3 );
+            align-items: map-get($divNosotros, 4 );
+            text-align: map-get($divNosotros, 5 );
+            margin: map-get($divNosotros, 6 );
+            iframe {
+                max-width: 100%;
+            }
+        }
+        .divMapa{
+            display: map-get($divNosotros, 1);
+            flex-direction: map-get($divNosotros, 2 );
+            justify-content: map-get($divNosotros, 3 );
+            align-items: map-get($divNosotros, 4 );
+            text-align: map-get($divNosotros, 5 );
+            margin: map-get($divNosotros, 6 );
+            img {
+                width: 60%;
+            }
+        }
+    }
+//FIN NOSOTROS
+//..........//
+
+//INICIO DE GALERIA
+//...............//
+    .secGal{
+        .divGal {
+            display: flex;
+            flex-direction: row;
+            justify-content: $center;
+            align-items: $center;
+            flex-wrap: wrap;
+            .foto{
+                @extend %img;
+                height: 350px;
+                overflow: hidden;
+                margin: 5px;
+                background-color: $bgcw;
+                border-radius: 25px;
+                display: flex;
+                flex-direction: row;
+                justify-content: $center;
+                align-items: $center;
+                img{
+                    height: 100%;
+                    border-radius: 25px;
+                    transition: all 500ms ease;
+                    &:hover{
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        } 
+    }   
+//FIN GALERIA
+//.........//
+
+//INICIO TURNOS
+//...........// 
+    .secTurnos{
+        background-color: $bgc;
+        border-radius: 20px;
+        h2,p,th{
+            color: $white;
+            text-align: $center;
+        }
+        form{
+            padding: 30px;
+            text-align: $center;
+            }
+            table{
+                @include colores($bgc,$white ,$center);
+                border: 2px solid rgba(255,255,255,0.9);
+                margin: auto;
+                width: 70%;
+                padding: 15px;
+                height: 15vh;
+                .selecTurnos {
+                    @extend %select;
+                    width: 40%;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                tr{
+                    border-bottom: 1px solid white;
+                }
+            }
+    }
+
+    //INICIO CONTACTO
+    //.............// 
+    .secCon{
+        form {
+            text-align: center;
+            background-color: $bgc;
+            border-radius: 15px;
+            padding: 10%;
+            @extend %form;
+            margin: auto;
+            select{
+                @extend %rgba;
+                width: 35%;
+                margin: auto;
+            }
+             legend, label{
+                 color: $white;
+                 margin: 3px 0px 3px 15px;
+             }
+             input,textarea{
+                 margin: 5px;
+                 @extend %rgba;
+                 resize: none;
+                 border-radius: 25px;
+                 &:focus{
+                     @extend %estados;
+                 }
+                 &:checked{
+                     @extend %estados;
+                 }
+             }
+            .selectContacto{
+                 @extend %select;
+                 color: black;
+                 border-radius: 20px;
+                 margin: 5px;
+                 &:hover{
+                     color: white;
+                     background-color: rgba(250,111,155,1);
+                     transform: scale(1.1);
+                 }
+             }
+        }
+    }
+}
