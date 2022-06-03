@@ -66,8 +66,36 @@
 	<!-- Inicio sección contacto -->
 	<main class="container-fluid">
 		<h1 class="titPrin" id="tituloPrincipal">Javascript</h1>
-		<section class="container">
-            <article class="row">
+		<section class="container secJav">
+			<article class="row">
+				<h2 class="tituloJava">Registro de productos</h2>
+				<form action="" id="formulario" class="form-inline formulario">
+					<div class="row align-items-center">
+						<div class="col col-lg-4 col-md-4 offset-1">
+							<label for="nombre">Nombre del producto:</label>
+							<input type="text" name="nombre" id="nombre" class="form-control">
+							<div id="leyenda1"></div>
+						</div>	
+						<div class="col col-lg-4 col-md-4 offset-1">	
+							<label for="precio">Precio del producto:</label>
+							<input type="number" name="precio" id="precio" class="form-control">
+							<div id="leyenda2"></div>
+						</div>
+					</div>	
+					<div class="row align-items-center">
+						<div class="col col-lg-4 col-md-4 offset-1">
+							<label for="stock">Stock disponible del producto:</label>
+							<input type="number" name="stock" id="stock" class="form-control">
+							<div id="leyenda3"></div>
+						</div>
+						<div class="col col-lg-4 col-md-4 offset-1">
+								<button type="submit" class="btn btn-primary" id="btnsubmit">Registrar</button>
+						</div>
+						</div>	
+					</div>
+				</form>
+			</article>	
+            <article class="row filaTabla">
                 <table id="tabla" class="table table-striped table-danger col-lg-8 col-md-10">
                     <thead>
                         <tr>

@@ -64,6 +64,36 @@ main .secTurnos table .selecTurnos, main .secCon form .selectContacto {
   }
 }
 
+@media (min-width: 0) {
+  main .secJav {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 480px) {
+  main .secJav {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 720px) {
+  main .secJav {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 960px) {
+  main .secJav {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main .secJav {
+    padding: 25px;
+  }
+}
+
 main .titPrin, main .secInicio h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -470,6 +500,36 @@ main .secTurnos table .selecTurnos, main .secCon form .selectContacto {
   }
 }
 
+@media (min-width: 0) {
+  main .secJav {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 480px) {
+  main .secJav {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 720px) {
+  main .secJav {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 960px) {
+  main .secJav {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main .secJav {
+    padding: 25px;
+  }
+}
+
 main .titPrin, main .secInicio h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -792,5 +852,27 @@ main .secCon form .selectContacto:hover {
   background-color: #fa6f9b;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+main .secJav {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+main .row {
+  padding: 5px;
+}
+
+main .tituloJava {
+  color: white;
+  text-align: center;
+}
+
+main label {
+  color: white;
+}
+
+main .filaTabla {
+  margin-top: 20px;
+  padding: 20px;
 }
 /*# sourceMappingURL=estilos.css.map */

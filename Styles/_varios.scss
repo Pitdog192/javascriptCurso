@@ -2,7 +2,7 @@
 $border: 1px solid black;
 $bgc:rgba(0, 0, 0,0.6);
 $white:white;
-$center:center;
+$c:center;
 $border: 1px solid black;
 $bgcw:rgba(255, 255, 255, 0.678);
 
@@ -25,8 +25,14 @@ $bgcw:rgba(255, 255, 255, 0.678);
 @include lg{width: 55%;}
 @include xl{width: 50%;}}
 
+%padd {@include xs{padding:5px;}
+@include sm{padding:10px;}
+@include md{padding:15px;}
+@include lg{padding:20px;}
+@include xl{padding:25px;}}
+
 %titulos {
-    text-align: $center;
+    text-align: $c;
     font-size: 2.5rem;
     color: $white;
     text-shadow: 3px 3px 0px black, 2px 2px 0px black, 1px 1px 0px black;
@@ -50,7 +56,7 @@ $bgcw:rgba(255, 255, 255, 0.678);
 
 %rgba {
     background-color: rgba(255,195,214,1);
-    text-align: $center;
+    text-align: $c;
 }
 
 %estados{
@@ -62,9 +68,9 @@ $bgcw:rgba(255, 255, 255, 0.678);
 //Map
 $divNosotros:(  1: flex,
                 2: column,
-                3: $center,
-                4: $center,
-                5: $center,
+                3: $c,
+                4: $c,
+                5: $c,
                 6: 15px);
 
 //mixin con variable

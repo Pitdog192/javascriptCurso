@@ -30,7 +30,7 @@ body {
 main {
     min-height: 90vh;
     background-image: url(https://f.vividscreen.info/soft/5fd8414f8b1962b432d5de9b502c2c71/Colorful-Nails-1920x1200.jpg);
-	background-position: $center;
+	background-position: $c;
     background-repeat: repeat;
     background-size: cover;
 	padding: 15px;
@@ -40,7 +40,7 @@ main {
     .secInicio{
         padding: 0px 30px;
         p{
-            @include colores($bgc, $white , $center );
+            @include colores($bgc, $white , $c );
             border-radius: 15px;
             padding: 15px;
             @extend %fnt;
@@ -55,7 +55,7 @@ main {
             }
         }
         h5{
-            text-align: $center;
+            text-align: $c;
         }
     }
 
@@ -64,7 +64,7 @@ main {
     .secNosotros{
         padding: 0px 5%;
         h2 {
-            @include colores($bgc, $white , $center );
+            @include colores($bgc, $white , $c );
             width: 40%;
             border-radius: 15px;
         }
@@ -100,8 +100,8 @@ main {
         .divGal {
             display: flex;
             flex-direction: row;
-            justify-content: $center;
-            align-items: $center;
+            justify-content: $c;
+            align-items: $c;
             flex-wrap: wrap;
             .foto{
                 @extend %img;
@@ -112,8 +112,8 @@ main {
                 border-radius: 25px;
                 display: flex;
                 flex-direction: row;
-                justify-content: $center;
-                align-items: $center;
+                justify-content: $c;
+                align-items: $c;
                 img{
                     height: 100%;
                     border-radius: 25px;
@@ -135,14 +135,14 @@ main {
         border-radius: 20px;
         h2,p,th{
             color: $white;
-            text-align: $center;
+            text-align: $c;
         }
         form{
             padding: 30px;
-            text-align: $center;
+            text-align: $c;
             }
             table{
-                @include colores($bgc,$white ,$center);
+                @include colores($bgc,$white ,$c);
                 border: 2px solid rgba(255,255,255,0.9);
                 margin: auto;
                 width: 70%;
@@ -204,5 +204,24 @@ main {
                  }
              }
         }
+    }
+
+    .secJav{
+        background-color: rgba($color: #000000, $alpha: 0.8);
+        @extend %padd;
+    }
+    .row{
+        padding: 5px;
+    }
+    .tituloJava{
+        color: white;
+        text-align: $c;
+    }
+    label{
+        color: white;
+    }
+    .filaTabla{
+        margin-top: 20px;
+        padding: 20px;
     }
 }
