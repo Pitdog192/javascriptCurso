@@ -9,3 +9,28 @@ agregaProd(6, "Alicate Gusano Acero Inoxidable 915 ProStyle" ,1910,"../imagenes/
 //Crear cards de productos 
 mostrarProd();
 agregarCarrito();
+
+//Comprueba si existe algo en el carrito del localstorage y lo reemplaza
+if(localStorage.getItem("Carrito") != null){
+    carrito = JSON.parse(localStorage.getItem("Carrito"));
+    suma();
+    for (let carro of carrito){
+        let fila = document.createElement("tr");
+                fila.innerHTML= `<td>${carro.nombre}</td>
+                                <td>$${carro.precio}</td>
+                                <td><button class="btn btn-danger" id="btnSD">X</button></td>`
+                tablaBody.append(fila);
+    }
+}
+
+const btnBorrar = document.getElementById('btnMD');
+
+if (btnBorrar) {
+    btnBorrar.onclick = () => {
+        carrito.splice(0,carrito.length);
+        localStorage.clear();
+        tablaBody.innerHTML=``;
+        tablaFoot.innerHTML=``;
+        console.log(carrito); 
+    }
+}

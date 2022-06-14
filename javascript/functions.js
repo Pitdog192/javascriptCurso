@@ -5,7 +5,7 @@ const agregaProd = (id,nombre,precio,imagen) => productos.push(new Producto(id,n
 const mostrarProd = () => {
     for (let prod of productos){
         let divCard = document.createElement("div");
-        divCard.className ="card bg-light text-center col-lg-5 col-md-5 col-sm-6 mx-auto my-1";
+        divCard.className ="card bg-light text-center col-lg-5 col-md-5 col-sm-6 mx-auto  my-1";
         divCard.innerHTML= `<img class="card-img-top imgCards" src="${prod.imagen}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${prod.nombre}</h5>
@@ -16,9 +16,15 @@ const mostrarProd = () => {
     }
 }
 
+
+//Suma el total de todos los productos en el carrito
 const suma =()=> {
     const precio = Object.values(carrito).reduce((acc,{precio})=> acc+precio,0);
-    filaT.innerHTML= `<td>Total:</td><td class="text-red">$${precio}</td>`
+    filaT.innerHTML= `  <td>Total:</td>
+                        <td class="text-red">$${precio}</td>
+                        <td>
+                            <button class="btn btn-danger" id="btnMD">Borrar carrito</button>
+                        </td>`
     return precio;
 }
 
@@ -26,10 +32,11 @@ const suma =()=> {
 const agregarCarrito = () =>{
     for (let prod of productos){
         document.getElementById(`btn${prod.id}`).onclick=()=> {
-            carrito.push(new Carrito(prod.nombre,prod.precio)); 
+            carrito.push(new Carrito(prod.id,prod.nombre,prod.precio)); 
             let fila = document.createElement("tr");
             fila.innerHTML= `<td>${prod.nombre}</td>
-                            <td>$${prod.precio}</td>`
+                            <td>$${prod.precio}</td>
+                            <td><button class="btn btn-danger" id="btnSD">X</button></td>`
             tablaBody.append(fila);
             alert(`Producto agregado ${prod.nombre}`);
             localStorage.setItem("Carrito", JSON.stringify(carrito));
@@ -37,16 +44,8 @@ const agregarCarrito = () =>{
         }
     }
 }
-if(localStorage.getItem("Carrito") != null){
-    carrito = JSON.parse(localStorage.getItem("Carrito"));
-    suma();
-    for (let carro of carrito){
-        let fila = document.createElement("tr");
-                fila.innerHTML= `<td>${carro.nombre}</td>
-                                <td>$${carro.precio}</td>`
-                tablaBody.append(fila);
-    }
-}
+
+
 
 
 

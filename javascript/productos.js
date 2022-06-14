@@ -11,10 +11,12 @@ class Producto {
 const productos = [];
 
 class Carrito {
-    constructor(nombre,precio){
+    constructor(id, nombre,precio){
+        this.id=parseInt(id);
         this.nombre=nombre,
         this.precio=parseFloat(precio)
     }
 }
 let carrito = [];
+
 
