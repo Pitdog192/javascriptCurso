@@ -18,12 +18,3 @@ class Carrito {
 }
 let carrito = [];
 
-if(localStorage.getItem("Carrito") != null){
-    carrito = JSON.parse(localStorage.getItem("Carrito"));
-    for (let carro of carrito){
-        let fila = document.createElement("tr");
-                fila.innerHTML= `<td>${carro.nombre}</td>
-                                <td>$${carro.precio}</td>`
-                tablaBody.append(fila);
-    }
-}
