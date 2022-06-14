@@ -5,7 +5,7 @@ const agregaProd = (id,nombre,precio,imagen) => productos.push(new Producto(id,n
 const mostrarProd = () => {
     for (let prod of productos){
         let divCard = document.createElement("div");
-        divCard.className ="card bg-light text-center col-lg-5 col-md-5 col-sm-6 my-1";
+        divCard.className ="card bg-light text-center col-lg-5 col-md-5 col-sm-6 mx-auto my-1";
         divCard.innerHTML= `<img class="card-img-top imgCards" src="${prod.imagen}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${prod.nombre}</h5>
@@ -37,7 +37,6 @@ const agregarCarrito = () =>{
         }
     }
 }
-
 if(localStorage.getItem("Carrito") != null){
     carrito = JSON.parse(localStorage.getItem("Carrito"));
     suma();
