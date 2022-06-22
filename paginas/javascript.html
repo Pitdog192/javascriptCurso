@@ -69,7 +69,7 @@
 		<h1 class="titPrin" id="tituloPrincipal">Javascript</h1>
 		<section class="container secJav">
 			<h2 class="tituloJava">Productos</h2>
-			<button class="btnForm">Agregar nuevo producto</button>
+			<button class="btnForm btn btn-success" id="btnForm">Agregar nuevo producto</button>
 			<article class="row justify-content-center listaProductos">
 				<div class="col-lg-8 col-md-12 col-sm-12 row" id="divProd">
 					<!-- Acá se listan los productos -->
@@ -79,13 +79,15 @@
 						<thead>
 							<tr>
 								<td class="col-7">Nombre</td>
+								<td class="col-1">Cantidad</td>
 								<td class="col-3">Precio</td>
-								<td class="col-2"></td>
+								<td class="col-1"></td>
 							</tr>
 						</thead>
 						<tbody id="tablaBody"></tbody>
 						<tfoot id="tablaFoot">
 							<td class="col-7">Total:</td>
+							<td></td>
                       		<td id="totalCarro" class="col-3"></td>
                       		<td class="col-2"><button class="btn btn-danger" id="btnMD"><i class="bi bi-trash"></i></button></td>
 						</tfoot>
@@ -135,14 +137,17 @@
 	<!-- fin tamplate de productos -->
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
-		<!--Javascript mio-->
-		<script src="../javascript/productos.js"></script>
-		<script src="../javascript/dom.js"></script>
-		<script src="../javascript/functions.js"></script>
-		<script src="../javascript/app.js"></script>
-		<!--Fin Javascript mio-->
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+	<!--Javascript mio-->
+	<script src="../javascript/productos.js"></script>
+	<script src="../javascript/dom.js"></script>
+	<script src="../javascript/alertas.js"></script>
+	<script src="../javascript/functions.js"></script>
+	<script src="../javascript/app.js"></script>
+	<!--Fin Javascript mio-->
+	<script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
 </body>
 
 </html>

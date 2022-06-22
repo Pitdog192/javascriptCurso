@@ -10,26 +10,26 @@ agregaProd(6, "Alicate Gusano Acero Inoxidable 915 ProStyle", 1910, "../imagenes
 mostrarProd(productos);
 
 
-//Comprueba si existe algo en el carrito del localstorage
+// Comprueba si existe algo en el carrito del localstorage
 if (carrito) {
     suma();
-    for (let carro of carrito) {
-        let fila = document.createElement("tr");
-        fila.innerHTML = `<td>${carro.nombre}</td>
-            <td>$${carro.precio}</td>
-            <td><button class="btn btn-danger" id="btnSD">X</button></td>`
-        tablaBody.append(fila);
-    }
-}
-
+    tablaBody.innerHTML="";  
+    Object.values(carrito).forEach(producto => {
+        tablaBody.innerHTML += `<tr><td>${producto.nombre}</td>
+            <td>${producto.cantidad}</td>
+            <td>$${producto.precio}</td>
+            <td><button class="btn btn-danger" id="btn${producto.id}"  data-id="${producto.id}">X</button></td></tr>`
+        tabla.append(tablaBody);
+    })
+} 
+  
 //Boton para borrar todo el carrito
+
 btnMD.onclick = () => {
-    let respuesta = prompt("Si desea borrar todo escriba si");
-    if ((respuesta === 'Si') || (respuesta ==='si') || (respuesta === '')){
-        carrito.splice(0, carrito.length);
-        localStorage.clear();
-        tablaBody.innerHTML = ``;
-        suma();
+    if (Object.keys(carrito).length === 0){
+        simple('error', 'No hay productos para eliminar', 'Compre algo antes!');
+    } else {
+        confirmaBorra();
     }
 }
 
@@ -37,3 +37,45 @@ btnMD.onclick = () => {
 divProd.addEventListener('click', e =>{
     capturaEvento(e)
 })
+
+tabla.addEventListener('click', e => {
+    capturaBtnBorrar(e)
+} )
+
+
+const agregaProducto = (imagen, nombre, precio, id) => {
+        templateCard.querySelector('img').setAttribute("src", imagen);
+        templateCard.querySelector('h5').textContent = nombre;
+        templateCard.querySelector('p').textContent = precio;
+        templateCard.querySelector('.btn').setAttribute("id", `btn${id}`);
+        templateCard.querySelector('.btn').dataset.id = id;
+        let clon = templateCard.cloneNode(true);
+        divProd.appendChild(clon);
+}
+
+
+btnForm.onclick = () => {
+    Swal.fire({
+  title: 'Cargar productos nuevos',
+  html: `<input type="text" id="idProd" class="swal2-input" placeholder="ID">
+         <input type="text" id="nombre" class="swal2-input" placeholder="Nombre">
+         <input type="text" id="precio" class="swal2-input" placeholder="Precio">
+         <input type="text" id="imagen" class="swal2-input" placeholder="Ingrese link de la imagen" value="../imagenes/imgJava/testProd.jpg">`,
+  confirmButtonText: 'Cargar Producto',
+  focusConfirm: false,
+  preConfirm: () => {
+    const idProd = Swal.getPopup().querySelector('#idProd').value
+    const nombre = Swal.getPopup().querySelector('#nombre').value
+    const precio = Swal.getPopup().querySelector('#precio').value
+    const imagen = Swal.getPopup().querySelector('#imagen').value
+    if (!idProd || !nombre) {
+      Swal.showValidationMessage(`Ingresá los datos del producto`)
+    }
+    return { id: idProd, nombre: nombre, precio: precio, imagen: imagen }
+  }
+}).then((result) => {
+    agregaProd(result.value.id , result.value.nombre, result.value.precio ,result.value.imagen);
+    agregaProducto(result.value.imagen, result.value.nombre, result.value.precio , result.value.id);
+    console.log(productos);
+})
+}
