@@ -8,4 +8,10 @@ const btnMD = document.getElementById('btnMD');
 tablaFoot.appendChild(filaT);
 const templateCard = document.getElementById('templateCard').content;
 const fragment = document.createDocumentFragment();
-const btnForm = document.getElementById('btnForm');
+
+
+const botonDePrueba = document.getElementById('botondeprueba');
+
+botonDePrueba.addEventListener('click', () =>{
+    Swal.fire('Any fool can use a computer')
+})
