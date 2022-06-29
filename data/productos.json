@@ -1,0 +1,8 @@
+[
+{"id": 1, "nombre": "Alpha - Mascarilla Exfoliante y Purificante", "precio": 1800, "imagen": "../imagenes/imgJava/cremaNegra.jpg"},
+{"id": 2, "nombre": "Brocha Facial", "precio": 300, "imagen" : "../imagenes/imgJava/brochaFacial.jpg"},
+{"id": 3, "nombre": "Toalla Facial Desmaquillante", "precio": 350, "imagen": "../imagenes/imgJava/toallaFacial.jpg"},
+{"id": 4, "nombre": "Esmalte UNA", "precio": 670, "imagen": "../imagenes/imgJava/esmalteBordo.jpg"},
+{"id": 5, "nombre": "Torno Profesional Nail Station 4 in One Teknikpro", "precio": 29900, "imagen": "../imagenes/imgJava/tornoProfesional.jpg"},
+{"id": 6, "nombre": "Alicate Gusano Acero Inoxidable 915 ProStyle",  "precio": 1910, "imagen": "../imagenes/imgJava/AlicateGusano.jpg"}
+]

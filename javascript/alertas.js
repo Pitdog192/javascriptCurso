@@ -1,4 +1,4 @@
-const simple = (icono, titulo, texto) => {
+const alertasimple = (icono, titulo, texto) => {
     Swal.fire({
         icon: icono,
         title: titulo,
@@ -18,11 +18,11 @@ const confirmaBorra = () => {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
-          simple('success','Borrado!','El carrito ha sido borrado.')
+          alertasimple('success','Borrado!','El carrito ha sido borrado.')
         carrito = {};
         localStorage.clear();
         tablaBody.innerHTML = ``;
-        suma();
+        sumaPrecios();
         }
       })
 }
